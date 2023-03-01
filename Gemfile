@@ -5,7 +5,6 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
-gem 'mysql2', '0.5.2'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -21,9 +20,18 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.6'
+  #gem 'rails_12factor' , '0.0.2'
+end
+
+
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'mysql2', '0.5.2'
 end
 
 group :test do
